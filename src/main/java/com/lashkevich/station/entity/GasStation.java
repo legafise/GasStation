@@ -11,7 +11,7 @@ public class GasStation {
     private GasStation() {
         fillingStations = new ArrayList<>();
         fillingStations.add(new FillingStation());
-        fillingStations.add(new FillingStation(new BigDecimal("500")));
+        fillingStations.add(new FillingStation(new BigDecimal(Integer.toString(500))));
     }
 
     public static GasStation getInstance() {
