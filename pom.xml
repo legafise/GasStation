@@ -8,5 +8,28 @@
     <artifactId>GasStation</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <properties>
+        <log4j.version>1.2.17</log4j.version>
+    </properties>
 
+    <dependencies>
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>${log4j.version}</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>8</source>
+                    <target>8</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
