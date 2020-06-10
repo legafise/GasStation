@@ -12,7 +12,7 @@ import java.util.concurrent.locks.ReentrantLock;
 
 public class FillingStation {
     private static final Logger LOGGER = Logger.getLogger(FillingException.class.getName());
-    private Lock LOCK = new ReentrantLock();
+    private Lock lock = new ReentrantLock();
     private boolean isLocked;
     private long id;
     private BigDecimal fuel;
@@ -53,7 +53,7 @@ public class FillingStation {
 
     public void fillTank(Car car, BigDecimal gasAmount) throws FillingException {
         try {
-            this.isLocked = LOCK.tryLock(10, TimeUnit.SECONDS);
+            this.isLocked = lock.tryLock(10, TimeUnit.SECONDS);
             BigDecimal fuelBeforeRefueling = car.getFuel();
             logCarWentFillingStation(car, this.getId());
 
@@ -77,14 +77,14 @@ public class FillingStation {
             throw new FillingException(e);
         } finally {
             if (this.isLocked) {
-                LOCK.unlock();
+                lock.unlock();
             }
         }
     }
 
     public void fillFullTank(Car car) throws FillingException {
         try {
-            this.isLocked = LOCK.tryLock(10, TimeUnit.SECONDS);
+            this.isLocked = lock.tryLock(10, TimeUnit.SECONDS);
             BigDecimal fuelBeforeRefueling = car.getFuel();
             logCarWentFillingStation(car, this.getId());
 
@@ -105,7 +105,7 @@ public class FillingStation {
             throw new FillingException(e);
         } finally {
             if (this.isLocked) {
-                LOCK.unlock();
+                lock.unlock();
             }
         }
     }
