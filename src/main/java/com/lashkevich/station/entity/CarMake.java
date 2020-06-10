@@ -16,8 +16,8 @@ public enum CarMake {
 
     private String makeName;
 
-    CarMake(String info) {
-        this.makeName = info;
+    CarMake(String carMake) {
+        this.makeName = carMake;
     }
 
     public String getMakeName() {
