@@ -22,6 +22,7 @@ public class Constant {
     public static final String CAR_DID_NOT_WAIT_ENTER_MESSAGE = "не дождалась своей очереди и уехала";
     public static final String HAS_BEEN_REFUELED_ENTER_MESSAGE = "Было заправлено";
     public static final String FILED_ON_FILLING_STATION_ENTER_MESSAGE = "заправлена на колонке";
+    public static final String ENTERED_INCORRECT_VALUE_IN_RANGE_ENTER_MESSAGE = "Введено недопустимое значение(введите число от 0 до 1000)";
     public static final String OR = "или";
     public static final String PERCENT = "%";
     public static final String SEMICOLON = ";";

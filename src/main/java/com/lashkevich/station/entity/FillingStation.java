@@ -19,7 +19,7 @@ public class FillingStation {
 
     public FillingStation(BigDecimal fuel) throws FillingException {
         if (fuel.compareTo(Constant.MAX_STATION_FUEL) > 0 || fuel.compareTo(Constant.MIN_STATION_FUEL) < 0) {
-            throw new FillingException();
+            throw new FillingException(Constant.ENTERED_INCORRECT_VALUE_IN_RANGE_ENTER_MESSAGE);
         }
 
         this.id = IdGenerator.generateFillingStationId();
